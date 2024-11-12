@@ -22,3 +22,6 @@ php -S localhost:3030 -t .
 - game.js : Contient toute la logique de jeu en JavaScript.
 
 ### 💻 Captures d'écran
+Voici une capture d'écran du jeu en action :
+
+![Aperçu du Puissance 4](assets/screenshot.png)
