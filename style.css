@@ -10,12 +10,28 @@ h1 {
     margin-bottom: 20px;
 }
 
+#puissance4-container {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#game-frame {
+    background-color: #0047ab; /* Bleu foncé pour le cadran */
+    border-radius: 15px;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
 #game {
     display: grid;
     grid-template-columns: repeat(7, 50px);
     gap: 5px;
     justify-content: center;
-    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .cell {
@@ -28,6 +44,7 @@ h1 {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    z-index: 3;
 }
 
 .cell:hover {
@@ -44,6 +61,26 @@ h1 {
 
 .cell.player2 {
     background-color: yellow;
+}
+
+#base-left,
+#base-right {
+    width: 50px;
+    height: 100px;
+    background-color: #0047ab;
+    position: absolute;
+    bottom: -20px;
+    z-index: 0;
+}
+
+#base-left {
+    left: -55px; /* Décale à gauche du cadran */
+    border-radius: 0 0 10px 10px; /* Bord inférieur arrondi */
+}
+
+#base-right {
+    right: -55px; /* Décale à droite du cadran */
+    border-radius: 0 0 10px 10px; /* Bord inférieur arrondi */
 }
 
 #status {

@@ -8,8 +8,14 @@
 </head>
 <body>
     <h1>Puissance 4</h1>
-    <div id="game">
-        <!-- Grille du jeu générée dynamiquement par JavaScript -->
+    <div id="puissance4-container">
+        <div id="game-frame">
+            <div id="game">
+                <!-- Les cellules seront générées par JavaScript -->
+            </div>
+        </div>
+        <div id="base-left"></div>
+        <div id="base-right"></div>
     </div>
     <div id="status">
         Joueur <span id="currentPlayer">1</span>, c'est votre tour !
