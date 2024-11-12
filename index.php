@@ -17,6 +17,10 @@
         <div id="base-left"></div>
         <div id="base-right"></div>
     </div>
+    <div id="scoreboard">
+        Joueur 1 : <span id="score1">0</span> | Joueur 2 : <span id="score2">0</span>
+    </div>
+    <button id="restart">Recommencer</button>
     <div id="status">
         Joueur <span id="currentPlayer">1</span>, c'est votre tour !
     </div>

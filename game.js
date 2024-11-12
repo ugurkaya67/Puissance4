@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let board = Array(ROWS).fill(null).map(() => Array(COLS).fill(0));
     let currentPlayer = 1;
     let gameOver = false;
+    let score1 = 0, score2 = 0;
 
     // Génération de la grille
     for (let row = 0; row < ROWS; row++) {
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (checkWin(row, col)) {
                     document.getElementById("status").innerText = `Joueur ${currentPlayer} a gagné !`;
+                    updateScore();
                     gameOver = true;
                 } else {
                     currentPlayer = currentPlayer === 1 ? 2 : 1;
@@ -69,4 +71,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return count;
     }
+
+    function updateScore() {
+        if (currentPlayer === 1) score1++;
+        else score2++;
+        document.getElementById("score1").innerText = score1;
+        document.getElementById("score2").innerText = score2;
+    }
+
+    // Bouton Restart 
+    document.getElementById("restart").addEventListener("click", () => {
+        board = Array(ROWS).fill(null).map(() => Array(COLS).fill(0));
+        document.querySelectorAll(".cell").forEach(cell => {
+            cell.className = "cell"; // Réinitialise les styles
+        });
+        currentPlayer = 1;
+        currentPlayerSpan.innerText = currentPlayer;
+        gameOver = false;
+        document.getElementById("status").innerText = "Joueur 1, c'est votre tour !";
+    });
 });
